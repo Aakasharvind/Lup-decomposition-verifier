@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <title>LUP decomposition result</title>
+
+    <style> 
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+          }
+          
+          h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 36px;
+          }
+          
+          table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            animation: fade-in 1s ease-in-out;
+          }
+          
+          th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+          }
+          
+          th {
+            background-color: #f2f2f2;
+          }
+          
+          tr:nth-child(even) {
+            background-color: #f2f2f2;
+          }
+          
+          tr:hover {
+            background-color: #ddd;
+          }
+          
+          @keyframes fade-in {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+          
+          p {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+            animation: slide-up 1s ease-in-out;
+          }
+          
+          @keyframes slide-up {
+            0% {
+              transform: translateY(50px);
+              opacity: 0;
+            }
+            100% {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+          
+              
+    
+    
+    </style>
+  </head>
+  <body>
+    <h1>LUP decomposition result</h1>
+    <p>The LUP decomposition of A is:</p>
+    <table>
+      <tr>
+        <td>L = </td>
+        <td>{{ L[0][0] }}, 0, 0</td>
+        <td>{{ L[1][0] }}, {{ L[1][1] }}, 0</td>
+        <td>{{ L[2][0] }}, {{ L[2][1] }}, {{ L[2][2] }}</td>
+      </tr>
+      <tr>
+        <td>U = </td>
+        <td>{{ U[0][0] }}, {{ U[0][1] }}, {{ U[0][2] }}</td>
+        <td>0, {{ U[1][1] }}, {{ U[1][2] }}</td>
+        <td>0, 0, {{ U[2][2] }}</td>
+      </tr>
+      <tr>
+        <td>P = </td>
+        <td>{{ P[0][0] }}, {{ P[0][1] }}, {{ P[0][2] }}</td>
+        <td>{{ P[1][0] }}, {{ P[1][1] }}, {{ P[1][2] }}</td>
+        <td>{{ P[2][0] }}, {{ P[2][1] }}, {{ P[2][2] }}</td>
+      </tr>
+    </table>
+    <br>
+    <p>The solution to the system of equations is:</p>
+    <p>x = {{ x[0] }}</p>
+    <p>y = {{ x[1] }}</p>
+    <p>z = {{ x[2] }}</p>
+  </body>
+</html>
