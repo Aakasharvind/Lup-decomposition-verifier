@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <title>LUP decomposition</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 3rem;
+        margin-top: 2rem;
+        color: red;
+        text-shadow: 2px 2px #000;
+      }
+      
+      form {
+        max-width: 50%;
+        margin: auto;
+        border: 1px solid #ccc;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        animation-name: slideIn;
+        animation-duration: 0.5s;
+        animation-fill-mode: both;
+        background-color: #000;
+      }
+      
+      table {
+        margin-bottom: 2rem;
+        border-collapse: collapse;
+      }
+      
+      td {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+      }
+      
+      input[type="text"] {
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 1.1rem;
+        background-color: #f5f5f5;
+        width: 80%;
+      }
+      
+      input[type="submit"] {
+        background-color: #2d9bf0;
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+        margin-top: 1rem;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #1e7bbf;
+      }
+      
+      label {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: orange;
+        margin-bottom: 0.5rem;
+      }
+    
+      @keyframes slideIn {
+        from {
+          transform: translateY(-10%);
+          opacity: 0;
+        }
+      
+        to {
+          transform: translateY(0%);
+          opacity: 1;
+        }
+      }
+    </style>
+    
+    </style>
+  </head>
+  
+  <body>
+    <h1>LUP decomposition</h1>
+    <form action="{{ url_for('result') }}" method="POST">
+      <label>Matrix A:</label>
+      <table>
+        <tr>
+          <td><input type="text" name="a11"><br></td>
+          <td><input type="text" name="a12"><br></td>
+          <td><input type="text" name="a13"><br></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="a21"><br></td>
+          <td><input type="text" name="a22"><br> </td>
+
+          <td><input type="text" name="a23"> <br></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="a31"><br></td>
+          <td><input type="text" name="a32"><br> </td>
+
+          <td><input type="text" name="a33"> <br></td>
+        </tr>
+      </table>
+      <br>
+      <label>Matrix B:</label>
+       <input type="text" name="b1">x<Br><br>+<input type="text" name="b2">y<br><br> +<input type="text" name="b3"> z = 0<br><br>
+      <br> 
+      <input type="submit" value="Calculate LUP decomposition"> <br>
+    </form>
+  </body>
+</html>

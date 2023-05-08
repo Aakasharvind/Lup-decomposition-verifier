@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+  <head>
+    <title>LUP decomposition result</title>
+
+    <style> 
+      body {
+        
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        color: #333;
+        margin-top: 50px;
+      }
+      table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        width: 80%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        animation: fade-in 1s ease-in-out;
+        border: 2px solid #333;
+        box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+      }
+      th, td {
+        padding: 15px;
+        border: 1px solid #ddd;
+        text-align: center;
+        font-weight: 400;
+        color: #333;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      tr:nth-child(even) {
+        background-color: yellow;
+      }
+      tr:nth-child(odd) {
+        background-color: orange;
+      }
+      tr:hover {
+        background-color: #f5f5f5;
+      }
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      p {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 24px;
+        color: #333;
+        animation: slide-up 1s ease-in-out;
+      }
+      @keyframes slide-up {
+        0% {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }   
+      .animated-cell {
+        animation-name: fade-in;
+        animation-duration: 2s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+      }
+      
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      This will create a table with a header row and three data rows, each containing a label and a value. The values are generated dynamically using the {{ x[i] }} syntax, which assumes that the x variable is defined in a server-side script or a template engine like Jinja2.
+      
+      The td:first-child selector styles the first cell in each row as bold and right-aligned, while the .animated-cell class applies a fade-in animation to the third cell in each row, using keyframe animations and the opacity property.
+      
+      Feel free to adjust the styles and animations to your liking!
+      
+      
+      
+      
+      
+      
+      
+    
+    </style>
+  </head>
+  <body>
+    <h1>LUP decomposition result</h1>
+    <p>The LUP decomposition of A is:</p>
+    <table>
+      <tr>
+        <td>L = </td>
+        <td>{{ '{:.2f}'.format(L[0][0]) }}, 0, 0</td>
+        <td>{{ '{:.2f}'.format(L[1][0]) }}, {{ '{:.2f}'.format(L[1][1]) }}, 0</td>
+        <td>{{ '{:.2f}'.format(L[2][0]) }}, {{ '{:.2f}'.format(L[2][1]) }}, {{ '{:.2f}'.format(L[2][2]) }}</td>
+      </tr>
+      <tr>
+        <td>U = </td>
+        <td>{{ '{:.2f}'.format(U[0][0]) }}, {{ '{:.2f}'.format(U[0][1]) }}, {{ '{:.2f}'.format(U[0][2]) }}</td>
+        <td>0, {{ '{:.2f}'.format(U[1][1]) }}, {{ '{:.2f}'.format(U[1][2]) }}</td>
+        <td>0, 0, {{ '{:.2f}'.format(U[2][2]) }}</td>
+      </tr>
+      <tr>
+        <td>P = </td>
+        <td>{{ '{:.2f}'.format(P[0][0]) }}, {{ '{:.2f}'.format(P[0][1]) }}, {{ '{:.2f}'.format(P[0][2]) }}</td>
+        <td>{{ '{:.2f}'.format(P[1][0]) }}, {{ '{:.2f}'.format(P[1][1]) }}, {{ '{:.2f}'.format(P[1][2]) }}</td>
+        <td>{{ '{:.2f}'.format(P[2][0]) }}, {{ '{:.2f}'.format(P[2][1]) }}, {{ '{:.2f}'.format(P[2][2]) }}</td>
+      </tr>
+    </table>
+    <br>
+    <table>
+      <tr>
+        <td colspan="3">
+          <h2>Solution to the System of Equations</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>x:</td>
+        <td class="animated-cell">{{ '{:.2f}'.format(x[0]) }}</td>
+      </tr>
+      <tr>
+        <td>y:</td>
+        <td class="animated-cell">{{ '{:.2f}'.format(x[1]) }}</td>
+      </tr>
+      <tr>
+        <td>z:</td>
+        <td class="animated-cell">{{ '{:.2f}'.format(x[2]) }}</td>
+      </tr>
+    </table>
+</body>
